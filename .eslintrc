@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "camelcase": ["error", { "properties": "never", "allow": ["access_token", "refresh_token", "expires_at"] }]
+  },
+  "env": {
+    "jest/globals": true
+  },
+  "extends": ["airbnb-base", "plugin:jest/recommended"],
+  "plugins": ["jest"],
+  "parser": "babel-eslint"
+}

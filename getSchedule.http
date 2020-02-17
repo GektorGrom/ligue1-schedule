@@ -1,0 +1,4 @@
+GET https://svbiszik4b.execute-api.us-west-2.amazonaws.com/dev/ligue1/schedule/2020-02-16
+Accept: application/json
+X-Timezone-IANA: America/Edmonton
+###
