@@ -57,7 +57,7 @@
     "@middy/http-cors": "^1.0.0-beta.5",
     "@middy/http-error-handler": "^1.0.0-beta.5",
     "aws-sdk": "^2.608.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "date-fns": "^2.9.0",
     "date-fns-tz": "^1.0.9",
     "nanoid": "^2.1.10",
