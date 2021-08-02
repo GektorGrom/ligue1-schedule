@@ -6,16 +6,16 @@ const client = new AWS.DynamoDB.DocumentClient();
 const getSchedule = async (startDate = startOfDay(new Date())) => client
   .scan({
     TableName: 'BeIN_schedule',
-    FilterExpression: '#startTime > :expiration AND #endTime < :stopTime',
+    FilterExpression: '#startTime > :startDay AND #endTime < :endDay',
     ExpressionAttributeNames: {
       '#startTime': 'start',
       '#endTime': 'start',
     },
     ExpressionAttributeValues: {
-      ':expiration': +format(startDate, 'T'),
-      ':stopTime': +format(addDays(startDate, 1), 'T'),
+      ':startDay': +format(startDate, 'T'),
+      ':endDay': +format(addDays(startDate, 1), 'T'),
     },
   })
-  .promise().then(({ Items }) => Items);
+  .promise().then(({ Items }) => Items.sort((a, b) => a.start - b.start));
 
 export default getSchedule;

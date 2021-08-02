@@ -4,7 +4,7 @@ function requestToDayStartInMS(event) {
   let timeZone = 'America/New_York';
   let day;
   try {
-    timeZone = event.headers['X-Timezone-IANA'];
+    timeZone = event.headers['x-timezone-offset'];
     day = event.pathParameters.day;
   } catch (e) {
     day = new Date();
